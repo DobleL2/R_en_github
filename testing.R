@@ -1,5 +1,33 @@
 
 
+# ----------------- Entorno de trabajo ---------------------------
+
+# Te indica el nombre de las variables que se encuentran en el espacio de trabajo
+ls()
+typeof(ls())
+
+# Eliminar algun dato guardado en memoria
+remove(x)
+
+# Eliminar todos los objetos existentes
+rm(list=ls())
+
+# Eliminar todos los objetos existentes dado algun patron
+rm(list=ls(pattern="new"))
+
+# Asignar el valor a una variable
+x <- 5
+5 -> y
+z <- list(a=1,b=2)
+
+# Verificar los objetos almacenados en el workspace
+objects()
+typeof(objects())
+
+# Verificar la ubicacion donde esta ubicado el archivo
+getwd()
+
+
 # -------------- Creacion de vectores ---------------------------
 
 # Valores logicos
@@ -37,16 +65,53 @@ vacio_numeric
 vacio_logical <- vector("logical",5) # FALSE
 vacio_logical
 
-vector_complex <- vector("character") # ""
+vector_complex <- vector("complex",4) # 0+0i
 vector_complex 
+
+vector_character <- vector("character") # ""
+vector_character 
 
 # ---------------- Revisar NAs ------------------------------------
 
 x_vec <- c(2,3,NA,8)
 
+# Devuelve un vector de TRUE y FALSE
+is.na(x_vec)
+
+# Devuelve la posicion donde el na
+which(is.na(x_vec))
+
+# Devuelve la posicion donde no hay na
+which(!is.na(x_vec))
+
 # Filtrar dada una condicion en un nuevo vector
 new_x_vec <- x_vec[which(!is.na(x_vec))]
 
+
+# ------------------- Verificar tipo de datos y cambiar ----------
+
+# Comprobaciòn
+is.logical(x_vec)
+is.numeric(x_vec)
+is.complex(x_vec)
+is.double(x_vec)
+is.integer(x_vec)
+is.character(x_vec)
+
+# Cambio
+as.logical(x_vec)
+as.numeric(x_vec)
+as.complex(x_vec)
+as.double(x_vec)
+as.integer(x_vec)
+as.character(x_vec)
+
+# ------------------- Diferentes tipos de NA ---------------------
+
+NA_real_
+NA_integer_
+NA_character_
+NA_complex_
 
 # ---------------- Generar sequencias -----------------------------
 
