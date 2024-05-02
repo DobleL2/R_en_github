@@ -113,14 +113,29 @@ NA_integer_
 NA_character_
 NA_complex_
 
-# ---------------- Generar sequencias -----------------------------
+# ---------------- Generar sequencias y repeticiones ------------------
 
 1:5
 seq()
 seq(1,5)
 seq(1,10,2)
 seq(1,10,length.out=100)
+seq(from=-2,to=3,length=10)
 
+rep(3,8)
+rep(c(3,6,9),times=2)
+rep(c(2,4,6),each=2,times=2)
+rep(c('A','B'),times=2)
+
+# ----------------------- Operaciones basicas -----------------------
+
+3 + 2 
+3 - 2
+3 * 2
+5 / 3
+3 ^ 2
+sqrt(16)
+abs()
 
 
 # ----------------- Dar nombre a los elementos de un vector -------
@@ -128,6 +143,33 @@ seq(1,10,length.out=100)
 y <- 1:5
 names(y) <- c("uno","dos","tres","cuatro","cinco")
 attr(y,"names") <- c("uno","dos","tres","cuatro","cinco")
+
+
+# ----------------- Modificando vectores --------------------------
+
+# Crear un vector
+vec <- c(2,4,6,8)
+
+# Accedemos al elemento de la posicion 2
+vec[2]
+
+# Agregar elementos al final
+vec <- c(vec,c(15,18))
+
+# Agregar valores al inicio
+vec <- c(-1,vec)
+
+# Agregar un elemento en una posicion intermedia
+vec <- c(vec[1:4],-4,vec[5:7])
+
+# Eliminamos el valor alguna posicion 
+vec <- vec[-2]
+
+# Eliminamos varias posiciones
+vec <- vec[-c(4,7)]
+
+# Modificar elementos
+vec[1] <- 0
 
 
 # ----------------- FACTORES --------------------------------------
@@ -158,3 +200,7 @@ valores <- c("m", "b", "m", "a", "m", "a", "b", "m", "a")
 new_fac <- factor(x = valores)
 levels(new_fac) <- c("b","m","a")
 table(new_fac)
+
+
+# ------------------------ Matrices y Vectores ------------------------------
+
