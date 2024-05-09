@@ -346,7 +346,14 @@ datos
 # Creando un dataframe en el caso de que no se tenga la misma longitud
 datos1 <- data.frame(vec1=seq(1,4), vec2=c(T,F,T,F), vec3=LETTERS[1:4],
                     vec4=c(-1,-3), vec5=c("EC"))
+datos1
 str(datos1)
+
+rownames(datos1) <- paste0(datos1$vec1,datos$vec3)
+datos1
+set.seed(123)
+datos1$norm <- rnorm(4,4,2)
+subset(datos1,norm>4)
 
 # Modificamos la cuarta variable por los valores -2, 5, 8, -9
 datos1[,4] <- c(-2, 5, 8, -9)
